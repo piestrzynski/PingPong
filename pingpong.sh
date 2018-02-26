@@ -1,7 +1,8 @@
 #!/bin/bash
 ##################################################
-#
-#
+# w pliku ping_url.txt w tym samym katalogu
+# wymagane sa domeny do sprawdzenia
+# Pliki log 2, mail należy uzupełnić
 #
 ##################################################
 
@@ -20,7 +21,7 @@ do
 	elif [ $status = "404" ]
 	then	ping -c3 $z > ping-404.log
 	whois $z >> ping-404.log
-	mail -s "404 dla $z, `date`" "seo@int.pl" < ping-404.log
+	mail -s "404 dla $z, `date`" "test@test.pl" < ping-404.log
 	else
 	echo "Status: $status - $z; `date`" >> pingpong.log
 	fi
